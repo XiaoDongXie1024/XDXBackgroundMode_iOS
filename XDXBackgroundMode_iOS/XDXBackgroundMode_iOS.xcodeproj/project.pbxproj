@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2359896D21C1051900C5765D /* XDXBGModeManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2359896B21C1051900C5765D /* XDXBGModeManager.mm */; };
+		2359897221C106E100C5765D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2359897121C106E100C5765D /* CoreLocation.framework */; };
+		2359897521C108BE00C5765D /* XDXLocationManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2359897421C108BE00C5765D /* XDXLocationManager.mm */; };
 		236FECC521B7806D0059AB2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 236FECC421B7806D0059AB2E /* AppDelegate.m */; };
 		236FECC821B7806D0059AB2E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 236FECC721B7806D0059AB2E /* ViewController.m */; };
 		236FECCB21B7806D0059AB2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236FECC921B7806D0059AB2E /* Main.storyboard */; };
@@ -16,6 +19,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2359896B21C1051900C5765D /* XDXBGModeManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = XDXBGModeManager.mm; sourceTree = "<group>"; };
+		2359896C21C1051900C5765D /* XDXBGModeManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDXBGModeManager.h; sourceTree = "<group>"; };
+		2359896E21C105BC00C5765D /* XDXSingleton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDXSingleton.h; sourceTree = "<group>"; };
+		2359896F21C1063E00C5765D /* log4cplus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = log4cplus.h; sourceTree = "<group>"; };
+		2359897121C106E100C5765D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2359897321C108BE00C5765D /* XDXLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XDXLocationManager.h; sourceTree = "<group>"; };
+		2359897421C108BE00C5765D /* XDXLocationManager.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = XDXLocationManager.mm; sourceTree = "<group>"; };
 		236FECC021B7806D0059AB2E /* XDXBackgroundMode_iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XDXBackgroundMode_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		236FECC321B7806D0059AB2E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		236FECC421B7806D0059AB2E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -33,17 +43,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2359897221C106E100C5765D /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2359897021C106E000C5765D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2359897121C106E100C5765D /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		236FECB721B7806D0059AB2E = {
 			isa = PBXGroup;
 			children = (
 				236FECC221B7806D0059AB2E /* XDXBackgroundMode_iOS */,
 				236FECC121B7806D0059AB2E /* Products */,
+				2359897021C106E000C5765D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +78,8 @@
 		236FECC221B7806D0059AB2E /* XDXBackgroundMode_iOS */ = {
 			isa = PBXGroup;
 			children = (
+				2359896F21C1063E00C5765D /* log4cplus.h */,
+				2359896E21C105BC00C5765D /* XDXSingleton.h */,
 				236FECC321B7806D0059AB2E /* AppDelegate.h */,
 				236FECC421B7806D0059AB2E /* AppDelegate.m */,
 				236FECC621B7806D0059AB2E /* ViewController.h */,
@@ -67,6 +89,10 @@
 				236FECCE21B780760059AB2E /* LaunchScreen.storyboard */,
 				236FECD121B780760059AB2E /* Info.plist */,
 				236FECD221B780760059AB2E /* main.m */,
+				2359897321C108BE00C5765D /* XDXLocationManager.h */,
+				2359897421C108BE00C5765D /* XDXLocationManager.mm */,
+				2359896C21C1051900C5765D /* XDXBGModeManager.h */,
+				2359896B21C1051900C5765D /* XDXBGModeManager.mm */,
 			);
 			path = XDXBackgroundMode_iOS;
 			sourceTree = "<group>";
@@ -102,6 +128,11 @@
 				TargetAttributes = {
 					236FECBF21B7806D0059AB2E = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -141,6 +172,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2359897521C108BE00C5765D /* XDXLocationManager.mm in Sources */,
+				2359896D21C1051900C5765D /* XDXBGModeManager.mm in Sources */,
 				236FECC821B7806D0059AB2E /* ViewController.m in Sources */,
 				236FECD321B780760059AB2E /* main.m in Sources */,
 				236FECC521B7806D0059AB2E /* AppDelegate.m in Sources */,
@@ -286,7 +319,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YDEVQQ22JR;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = XDXBackgroundMode_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +339,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = YDEVQQ22JR;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = XDXBackgroundMode_iOS/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
